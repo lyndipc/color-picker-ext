@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
   const colorDisplay = document.getElementById("colorDisplay");
 
   // pickColorButton.addEventListener("click", () => {
@@ -19,11 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Listen for messages from content script or background script
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (request.action === "updateColor") {
+    if (message.action === "updateColor") {
       console.log("Received color: " + message.color);
       // Update the background of colorDisplay with the received color value
       colorDisplay.style.backgroundColor = message.color;
       colorDisplay.textContent = "Color: " + message.color;
     }
   });
-});
+// });

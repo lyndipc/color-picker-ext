@@ -8,18 +8,22 @@ chrome.contextMenus.create({
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId === "captureColor") {
-
-        // Get color under cursor
         var mouseX = info.clientX;
         var mouseY = info.clientY;
 
-        chrome.scripting.executeScript({
-            target: { tabId: tab.id },
-            function: function () {
-                var color = getColorAtCoordinates(mouseX, mouseY);
-                chrome.runtime.sendMessage({ action: "updateColor", color: color });
-            },
-            args: [mouseX, mouseY]
+        chrome.runtime.sendMessage({ action: "updateColor", mouseX: mouseX, mouseY: mouseY });
+    }
+});
+
+chrome.runtime.onConnect.addListener((port) => {
+    if (port.name === "colorCapturePort") {
+        chrome.runtime.sendMessage.addListener((message) => {
+            if (message.action === "updateColor") {
+                chrome.storage.local.set({ color: message.color });
+            }
         });
     }
 });
+
+// TODO: get color from content script
+// It's currently returning undefined because we are not actually passing it in

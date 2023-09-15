@@ -8,6 +8,15 @@
   "background": {
     "service_worker": "background.js"
   },
+  "commands": {
+    "captureColor": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Capture color from the page"
+    }
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
