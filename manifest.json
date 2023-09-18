@@ -5,25 +5,7 @@
   "action": {
     "default_popup": "popup.html"
   },
-  "background": {
-    "service_worker": "background.js"
-  },
-  "commands": {
-    "captureColor": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+Y",
-        "mac": "Command+Shift+Y"
-      },
-      "description": "Capture color from the page"
-    }
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ],
   "description": "A simple color picker extension",
   "host_permissions": ["http://*/*", "https://*/*"],
-  "permissions": ["activeTab", "contextMenus", "scripting", "tabs"]
+  "permissions": ["activeTab", "tabs"]
 }
