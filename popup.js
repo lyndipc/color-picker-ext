@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+  // TODO: Keep the last selected color in color picker even after close and reopen the popup.
+  // TODO: Allow copy and paste of hex color codes in input element.
   // TODO: Get the five most frequently used colors on the webpage.
+  // TODO: Create button that allows adding the selected color to the color palette.
+  // TODO: Create button that allows adding another color picker to the popup.
   /**
    * Retrieves the five most frequently used colors on a webpage
    * @param {DOM object} webpage 
