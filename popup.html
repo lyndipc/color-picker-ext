@@ -3,23 +3,29 @@
 <head>
   <title>Color Picker Extension</title>
   <link rel="stylesheet" href="popup.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Mooli&display=swap" rel="stylesheet">
   <script src="popup.js"></script>
   <!-- <script src="content.js"></script> -->
 </head>
 <body>
-  <h1>Color Picker</h1>
+  <h1>Dev Color Picker</h1>
   <!-- <button id="pickColorButton">Pick Color</button> -->
+  <div id="palette-container"
+    <h3>Local Color Palette</h3>
+    <div id="colorPalette">
+      <!-- Add a square box for each color in the palette -->
+      <div class="colorBox" style="background-color: #ffffff"></div>
+      <div class="colorBox" style="background-color: #000000"></div>
+      <div class="colorBox" style="background-color: #ff0000"></div>
+      <div class="colorBox" style="background-color: #00ff00"></div>
+      <div class="colorBox" style="background-color: #0000ff"></div>
+    </div>
+  </div>
   <div>
+    <h3>Select a Color</h3>
     <input type="color" id="colorPicker">
   </div>
-  <div id="colorPalette">
-    <!-- Add a square box for each color in the palette -->
-    <div class="colorBox" style="background-color: #ffffff"></div>
-    <div class="colorBox" style="background-color: #000000"></div>
-    <div class="colorBox" style="background-color: #ff0000"></div>
-    <div class="colorBox" style="background-color: #00ff00"></div>
-    <div class="colorBox" style="background-color: #0000ff"></div>
-  </div>
-  
 </body>
 </html>
